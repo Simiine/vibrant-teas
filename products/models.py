@@ -76,3 +76,25 @@ class Accessories(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
+
+class Review(models.Model):
+    """
+    Model for product review
+    """
+    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE, related_name="reviews")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author_reviews')
+    review = models.TextField(max_length=1000)
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+    
+    class Meta:
+        """
+        Order reviews in ascending order
+        """
+        ordering = ['created_on']
+
+    def __str__(self):
+        """
+        Return string representation
+        """
+        return f"Review {self.review} by {self.author}"
