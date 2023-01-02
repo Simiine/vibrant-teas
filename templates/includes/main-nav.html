@@ -13,9 +13,9 @@
                 Teas
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="tea-link">
-                <a href="" class="dropdown-item">Herbal Tea</a>
-                <a href="" class="dropdown-item">Green Tea</a>
-                <a href="" class="dropdown-item">Black Tea</a>
+                <a href="{% url 'products' %}?category=teas&subcategory=herbal_tea" class="dropdown-item">Herbal Tea</a>
+                <a href="{% url 'products' %}?category=teas&subcategory=green_tea" class="dropdown-item">Green Tea</a>
+                <a href="{% url 'products' %}?category=teas&subcategory=black_tea" class="dropdown-item">Black Tea</a>
             </div>
         </li>
 
@@ -25,8 +25,8 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
-                <a href="" class="dropdown-item">Tea Strainers</a>
-                <a href="" class="dropdown-item">Teaware</a>
+                <a href="{% url 'products' %}?category=accessories&subcategory=tea_strainers" class="dropdown-item">Tea Strainers</a>
+                <a href="{% url 'products' %}?category=accessories&subcategory=teaware" class="dropdown-item">Teaware</a>
             </div>
         </li>
 
