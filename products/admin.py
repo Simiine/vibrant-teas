@@ -6,6 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'name',
         'category',
+        'subcategory',
         'price',
         'weight',
         'image',
@@ -18,6 +19,7 @@ class AccessoriesAdmin(admin.ModelAdmin):
         'sku',
         'name',
         'category',
+        'subcategory',
         'price',
         'image',
     )
