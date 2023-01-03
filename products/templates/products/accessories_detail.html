@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container my-5">
+                    {% if accessories.image %}
+                        <a href="{{ accessories.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ accessories.image.url }}" alt="{{ acceseories.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ accessories.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="product-details-container mb-5 mt-md-5">
+                    <p class="mb-0">{{ accessories.name }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold">${{ accessories.price }}</p>
+                    {% if accessories.subcategory %}
+                    <p class="small mt-1 mb-0">
+                        <a class="text-muted" href="{% url 'accessories' %}?subcategory={{ accessories.subcategory.name }}">
+                            <i class="fas fa-tag mr-1"></i>{{ accessories.subcategory.friendly_name }}
+                        </a>
+                    </p>
+                    {% endif %}
+                    <p class="mt-3">{{ accessories.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
