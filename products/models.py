@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+# from producers.models import Producer
 
 class Category(models.Model):
     """
