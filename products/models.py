@@ -38,6 +38,8 @@ class Product(models.Model):
     """
     Class for the product model
     """
+    # WEIGHTS = [(100), (200), (500),]
+
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     subcategory = models.ForeignKey('Subcategory', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
@@ -46,6 +48,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=False)
     description = models.TextField()
     # weight = models.IntegerField(blank=True, null=True)
+    # weight = models.IntegerField(choices=WEIGHTS, help_text='in grams', null=False, blank=False)
     weight = models.PositiveIntegerField(help_text='in grams', blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
