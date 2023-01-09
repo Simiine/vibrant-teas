@@ -52,8 +52,17 @@
                         </small>
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
-                    <p class="small mt-1 mb-0">{{ producer.name }}</p>
-                    <p class="small mt-1 mb-0">{{ producer.location }}</p>
+                    <!--Producer Section Start-->
+                    <p class="small mt-1 mb-0">About the Producer</p>
+                    <p class="small mt-1 mb-0">{{ product.producer.name }}</p>
+                    <p class="small mt-1 mb-0">{{ product.producer.location }}</p>
+                    <p class="small mt-1 mb-0">{{ product.producer.details }}</p>
+                    <!-- {% if product.producer %}
+                    <p class="mt-3">{{ producers.name }}</p>
+                    <p class="mt-3">{{ producer.location }}</p>
+                    <p class="small mt-1 mb-0">{{ producers.name }}</p>
+                    <p class="small mt-1 mb-0">{{ producers.location }}</p>
+                    {% endif %} -->
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
