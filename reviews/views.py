@@ -18,7 +18,10 @@ def add_review(request, product_id):
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
-            review = form.save()
+            review = form.save(commit=False)
+            review.user = user
+            review.product = product
+            review.save()
             messages.success(request, 'Successfully added review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -29,7 +32,6 @@ def add_review(request, product_id):
     template = 'reviews/add_review.html'
     context = {
         'product': product,
-        'review': review,
         'form': form,
         'user_profile': user,
     }
@@ -61,7 +63,6 @@ def edit_review(request, review_id):
     template = 'reviews/edit_review.html'
     context = {
         'product': product,
-        'review': review,
         'form': form,
     }
 
