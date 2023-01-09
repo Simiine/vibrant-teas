@@ -88,7 +88,7 @@ def delete_review(request, review_id):
     review.delete()
     messages.success(request, 'Review Sucessfully deleted!')
 
-    template = 'reviews/delete_review.html'
+    # template = 'reviews/delete_review.html'
 
     return redirect(reverse('product_detail', args=[review.product.id]))
 
