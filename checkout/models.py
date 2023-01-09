@@ -64,7 +64,7 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_weight = models.IntegerField(blank=True, null=True) # 100, 200, 500
+    # product_weight = models.IntegerField(blank=True, null=True) # 100, 200, 500
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
