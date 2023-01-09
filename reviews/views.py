@@ -41,29 +41,35 @@ def add_review(request, product_id):
 @login_required
 def edit_review(request, review_id):
     """ Edit a review for a product """
-    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(Review, pk=review_id)
     user = get_object_or_404(UserProfile, user=request.user)
+    product = review.product
 
-    if not request.user != review.author:
+    if not request.user != review.user:
         messages.error(request, 'You can only edit your own review')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ReviewForm(request.POST, request.FILES, instance=product)
+        form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
-            form.save()
+            review = form.save(commit=False)
+            review.user = user
+            review.product = product
+            review.save()
             messages.success(request, 'Successfully updated review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update review. Please ensure the form is valid.')
     else:
-        form = ReviewForm(instance=product)
+        form = ReviewForm(instance=review)
         messages.info(request, f'You are editing {review.product.name}')
 
     template = 'reviews/edit_review.html'
     context = {
+        'review': review,
         'product': product,
         'form': form,
+        'user_profile': user,
     }
 
     return render(request, template, context)
@@ -75,7 +81,7 @@ def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     user = get_object_or_404(UserProfile, user=request.user)
 
-    if not request.user != review.author:
+    if not request.user != review.user:
         messages.error(request, 'You can only delete your own review')
         return redirect(reverse('home'))
 
@@ -84,7 +90,7 @@ def delete_review(request, review_id):
 
     template = 'reviews/delete_review.html'
 
-    return redirect(reverse('product_detail'))
+    return redirect(reverse('product_detail', args=[review.product.id]))
 
 # class DeleteReview(DeleteView):
 #     """
