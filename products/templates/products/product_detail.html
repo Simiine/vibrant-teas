@@ -30,7 +30,7 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
-                    <p class="lead font-weight-bold text-secondary fs-3">{{ product.weight }}g</p> <!-- added for 1 weight -->
+                    <p class="lead font-weight-bold text-secondary fs-3">{{ product.weight }}g</p> <!-- added for weight -->
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -187,22 +187,8 @@
                                         <a href="{% url 'delete_review' review.id %}" class="btn btn-danger"><i class="fa fa-trash"></i> | Delete </i></a>
                                         <!-- <a href="{% url 'delete_review' review.id %}" class="btn btn-danger" onclick="if (!confirm('Are you sure you want to delete this review?')) { return false } "><i class="fa fa-trash"></i> | Delete </i></a> -->
                                     </p>
-                                    <!-- <a href="{% url 'edit_review' review.id %}" class="btn btn-sm btn-outline-dark">
-                                        <i class="far fa-edit"></i> Edit
-                                    </a>
-                                    <a href="{% url 'delete_review' review.id %}" class="btn btn-sm btn-outline-dark">
-                                        <i class="far fa-edit"></i> Delete
-                                    </a> -->
                                     {% endif %}
                                 {% endif %}
-                                <!-- {% if request.user == review.user %}
-                                <h5>Manage your Review:</h5>
-                                <strong>{{ review.user }}</strong>
-                                <p>
-                                    <a href="{% url 'edit_review' review.id %}" class="btn btn-success"><i class="fa fa-edit"></i> | Edit </i></a>
-                                    <a href="{% url 'delete_review' review.id %}" class="btn btn-danger"><i class="fa fa-trash"></i> | Delete </i></a>
-                                </p>
-                                {% endif %} -->
                             </div>
                         {% endfor %}
                     </div>

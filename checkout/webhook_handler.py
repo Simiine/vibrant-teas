@@ -133,23 +133,6 @@ class StripeWH_Handler:
                         quantity=item_data,
                     )
                     order_line_item.save()
-
-                    # if isinstance(item_data, int):
-                    #     order_line_item = OrderLineItem(
-                    #         order=order,
-                    #         product=product,
-                    #         quantity=item_data,
-                    #     )
-                    #     order_line_item.save()
-                    # else:
-                    #     for weight, quantity in item_data['items_by_weight'].items():
-                    #         order_line_item = OrderLineItem(
-                    #             order=order,
-                    #             product=product,
-                    #             quantity=quantity,
-                    #             product_weight=weight,
-                    #         )
-                    #         order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()

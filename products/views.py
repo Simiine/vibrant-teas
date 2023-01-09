@@ -15,7 +15,6 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
-    # accessory = Accessories.objects.all()
     query = None
     categories = None
     subcategories = None
@@ -30,7 +29,6 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-                # accessory = accessory.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
 
@@ -39,18 +37,15 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            # accessory = accessory.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
-            # accessory = accessory.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if 'subcategory' in request.GET:
             subcategories = request.GET['subcategory'].split(',')
             products = products.filter(subcategory__name__in=subcategories)
-            # accessory = accessory.filter(subcategory__name__in=subcategories)
             subcategories = Subcategory.objects.filter(name__in=subcategories)
 
         if 'q' in request.GET:
@@ -62,7 +57,6 @@ def all_products(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
-            # accessory = accessory.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
@@ -72,7 +66,6 @@ def all_products(request):
         'current_categories': categories,
         'current_subcategories': subcategories,
         'current_sorting': current_sorting,
-        # 'accessory': accessory,
     }
 
     return render(request, 'products/products.html', context)
@@ -154,14 +147,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-
-# def accessories_detail(request, accessories_id):
-#     """ A view to show individual accessories details """
-
-#     accessories = get_object_or_404(Accessories, pk=accessories_id)
-
-#     context = {
-#         'accessories': accessories,
-#     }
-
-#     return render(request, 'accessory/accessories_detail.html', context)
