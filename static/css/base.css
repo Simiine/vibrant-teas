@@ -199,6 +199,14 @@ input[name='q']::placeholder {
     font-size: 2rem;
 }
 
+/* All products page */
+
+.card-img {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -214,15 +222,6 @@ input[name='q']::placeholder {
 
 .toast-capper {
     height: 2px;
-}
-
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
 }
 
 /* Allauth form formatting */
@@ -306,6 +305,15 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
