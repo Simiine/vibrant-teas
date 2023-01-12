@@ -10,6 +10,14 @@ body {
     font-family: 'Roboto';
 }
 
+/* .bg-header {
+    background-color: #C27939;
+} */
+
+/* .main-colour {
+    background-color: #C27939;
+} */
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -27,11 +35,11 @@ body {
     width: fit-content;
 }
 
-.shop-now-button {
+/* .shop-now-button {
     background: black;
     color: white;
     min-width: 260px;
-}
+} */
 
 .btn-black {
     background: black;
@@ -52,7 +60,7 @@ body {
 }
 
 
-.shop-now-button:hover,
+/* .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
@@ -60,7 +68,7 @@ body {
 .btn-black:focus {
     background: #222;
     color: white;
-}
+} */
 
 .text-black {
     color: #000 !important;
@@ -70,9 +78,14 @@ body {
     border: 1px solid black !important;
 }
 
-.bg-black {
+/* .bg-black {
     background: #000 !important;
+} */
+
+.del-strip {
+    background: #9C5946;
 }
+
 
 .overlay {
 	height: 100%;
@@ -156,6 +169,34 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Footer */
+
+/* footer {
+    height: 5rem;
+} */
+
+.bright-bg {
+    background-color: #606C38;
+    font-size: 1rem;
+}
+
+.disclaimer {
+    text-align: center;
+}
+
+.align-middle {
+    text-align: center;
+}
+
+/* .social-networks {
+    color: #fff;
+} */
+
+.social-networks i {
+    color: white;
+    font-size: 2rem;
 }
 
 /* ------------------------------- bootstrap toasts */
