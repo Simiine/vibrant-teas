@@ -6,7 +6,7 @@ body {
     background: url('/media/homepage_background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    /* color: #555; */
     font-family: 'Roboto';
 }
 
@@ -83,7 +83,7 @@ body {
 } */
 
 .del-strip {
-    background: #9C5946;
+    background: #650B0F;
 }
 
 
@@ -207,6 +207,84 @@ input[name='q']::placeholder {
     object-fit: cover;
 }
 
+/* ----------------------------------------------- Product Detail page */
+
+
+.padding-top {
+    padding-top: 1rem;
+}
+
+.text-grams {
+    color: #650B0F;
+}
+
+/* Reviews */
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #CCCCB2 0%, #757519  51%, #CCCCB2  100%);
+    /* margin: 10px; */
+    padding: 6px 12px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .glass-box {
+    /* border-radius: 28px;
+    background: #e0e0e0;
+    box-shadow:  38px 38px 100px #acacac,
+                -38px -38px 100px #ffffff; */
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+  }
+
+  .btn-yellow {
+    background-color: #DDA15E;
+  }
+
+  .gold-str {
+    color: #C27939;
+  }
+
+  .flex-align {
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+ 
+ 
+
+/*---------------------------------------------------- Contact Form */
+
+.pad-bot {
+    padding-bottom: 1rem;
+}
+
+.btn-sub {
+    background-color: #9FBD9E;
+}
+
+.form-box {
+    width: fit-content;
+}
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
