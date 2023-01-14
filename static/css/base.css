@@ -2,23 +2,45 @@ html {
     height: 100%;
 }
 
+/* -------------------------------------------------------------------------- Font */
+
 body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------------------------------------------------------- Home Page */
+
+#hero {
+	background: url('/media/homepage_hero.jpg') no-repeat center center;
+	background-size: cover;
+    height: 40rem;
+    width: 100%;
+    /* height: calc(100vh - 164px); */
+}
+
+.pad {
+    margin: 2rem;
+}
+
+/* home page welcome section */
+
+
+
+
+
+
+/* body {
     background: url('/media/homepage_background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    /* color: #555; */
     font-family: 'Roboto';
-}
-
-/* .bg-header {
-    background-color: #C27939;
 } */
 
-/* .main-colour {
-    background-color: #C27939;
-} */
 
 /* from Bulma */
+
+/* -------------------------------------------------------------------------- Icons */
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -35,11 +57,7 @@ body {
     width: fit-content;
 }
 
-/* .shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
-} */
+/* -------------------------------------------------------------------------- Buttons */
 
 .btn-black {
     background: black;
@@ -60,16 +78,6 @@ body {
 }
 
 
-/* .shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
-} */
-
 .text-black {
     color: #000 !important;
 }
@@ -85,7 +93,6 @@ body {
 .del-strip {
     background: #650B0F;
 }
-
 
 .overlay {
 	height: 100%;
@@ -171,15 +178,16 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* Footer */
+/* -------------------------------------------------------------------------- Footer */
 
 /* footer {
     height: 5rem;
 } */
 
 .bright-bg {
-    background-color: #606C38;
-    font-size: 1rem;
+    background-color: #588157;
+    color: white;
+    /* font-size: 1rem; */
 }
 
 .disclaimer {
@@ -196,10 +204,10 @@ input[name='q']::placeholder {
 
 .social-networks i {
     color: white;
-    font-size: 2rem;
+    /* font-size: 1rem; */
 }
 
-/* All products page */
+/* -------------------------------------------------------------------------- All products page */
 
 .card-img {
     width: 100%;
@@ -207,8 +215,7 @@ input[name='q']::placeholder {
     object-fit: cover;
 }
 
-/* ----------------------------------------------- Product Detail page */
-
+/* -------------------------------------------------------------------------- Product Detail page */
 
 .padding-top {
     padding-top: 1rem;
@@ -218,7 +225,7 @@ input[name='q']::placeholder {
     color: #650B0F;
 }
 
-/* Reviews */
+/* -------------------------------------------------------------------------- Reviews */
          
 .btn-grad {
     background-image: linear-gradient(to right, #CCCCB2 0%, #757519  51%, #CCCCB2  100%);
@@ -232,47 +239,43 @@ input[name='q']::placeholder {
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     display: block;
-  }
+}
 
-  .btn-grad:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-  }
+.btn-grad:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+}
 
-  .glass-box {
-    /* border-radius: 28px;
-    background: #e0e0e0;
-    box-shadow:  38px 38px 100px #acacac,
-                -38px -38px 100px #ffffff; */
+.glass-box {
+/* border-radius: 28px;
+background: #e0e0e0;
+box-shadow:  38px 38px 100px #acacac,
+            -38px -38px 100px #ffffff; */
 
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.24);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.8px);
-    -webkit-backdrop-filter: blur(5.8px);
-    border: 1px solid rgba(255, 255, 255, 0.32);
-  }
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.8px);
+-webkit-backdrop-filter: blur(5.8px);
+border: 1px solid rgba(255, 255, 255, 0.32);
+}
 
-  .btn-yellow {
-    background-color: #DDA15E;
-  }
+.btn-yellow {
+background-color: #DDA15E;
+}
 
-  .gold-str {
-    color: #C27939;
-  }
+.gold-str {
+color: #C27939;
+}
 
-  .flex-align {
-    align-items: center;
-    justify-content: center;
-  }
+.flex-align {
+align-items: center;
+justify-content: center;
+}
 
- 
- 
- 
-
-/*---------------------------------------------------- Contact Form */
+/* -------------------------------------------------------------------------- Contact Form */
 
 .pad-bot {
     padding-bottom: 1rem;
@@ -285,7 +288,8 @@ input[name='q']::placeholder {
 .form-box {
     width: fit-content;
 }
-/* ------------------------------- bootstrap toasts */
+
+/* -------------------------------------------------------------------------- bootstrap toasts */
 
 .message-container {
     position: fixed;
@@ -356,7 +360,7 @@ input[name='q']::placeholder {
 	color: #17a2b8; /* text-info */
 }
 
-/* Product Form */
+/* -------------------------------------------------------------------------- Product Form */
 
 .btn-file {
     position: relative;
@@ -384,7 +388,7 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-/* -------------------------------- Media Queries */
+/* -------------------------------------------------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
