@@ -13,9 +13,8 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
-                <hr class="w-50 mb-1">
+            <div class="col text-center">
+                <h2 class="logo-font my-5">Products</h2>
             </div>
         </div>
         <div class="row">
@@ -62,14 +61,21 @@
                                 </a>
                                 {% endif %}
                                 <!-- Product info -->
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                <div class="card-body pb-0 text-center">
+                                    <p class="lead font-weight-bold mb-0"><a href="{% url 'product_detail' product.id %}"></a>{{ product.name }}</p>
+                                    <p class=" mb-0 font-weight-bold">€{{ product.price }}</p>
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3 text-center">
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="card-footer bg-white pt-0 border-0">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
-                                            {% if product.category %}
+                                            <!-- <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p> -->
+                                            <!-- {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
@@ -82,13 +88,13 @@
                                                     <i class="fas fa-tag mr-1"></i>{{ product.subcategory.friendly_name }}
                                                 </a>
                                             </p>
-                                            {% endif %}
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
+                                            {% endif %} -->
+                                            <!-- {% if request.user.is_superuser %}
+                                                <small class="ml-3 text-center">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                 </small>
-                                            {% endif %}
+                                            {% endif %} -->
                                         </div>
                                     </div>
                                 </div>
@@ -116,62 +122,6 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!--Accessories--> 
-                <!-- <div class="row">
-                    {% for accessories in accessory %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if accessories.image %}
-                                <a href="{% url 'accessories_detail' accessories.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ accessories.image.url }}" alt="{{ accessories.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'accessories_detail' accessories.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ accessories.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ accessories.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">€{{ accessories.price }}</p>
-                                            {% if accessories.subcategory %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'products' %}?subcategory={{ accessories.subcategory.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ accessories.subcategory.friendly_name }}
-                                                </a>
-                                            </p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %} -->
-                    {% endfor %}
-                </div>
-                <!--end of accessories-->
             </div>
         </div>
     </div>

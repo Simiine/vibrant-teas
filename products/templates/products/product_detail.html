@@ -13,6 +13,7 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
+            <!-- Product image -->
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-5">
                     {% if product.image %}
@@ -24,20 +25,17 @@
                             <img class="card-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
+                    {% if request.user.is_superuser %}
+                        <small class="">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
+                <!-- Product Information -->
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
-                    <p class="lead font-weight-bold text-secondary fs-3">{{ product.weight }}g</p> <!-- added for weight -->
-                    {% if product.category %}
-                    <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                        </a>
-                    </p>
-                    {% endif %}
                     {% if product.subcategory %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">
@@ -45,24 +43,45 @@
                         </a>
                     </p>
                     {% endif %}
-                    {% if request.user.is_superuser %}
+
+                    <!-- <p class="mb-0">{{ product.name }}</p> -->
+                    <h2 class="fw-bold">{{ product.name }}</h2>
+                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+
+                    {% if product.weight %}
+                    <p class="font-weight-bold text-grams fs-3">{{ product.weight }}g</p>
+                    {% endif %}
+                    
+                    <!-- {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
-                    {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
-                    <!--Producer Section Start-->
+                    {% endif %} -->
+
+                    <div class="padding-top">
+                        <h5>Product Description</h5>
+                        <p>{{ product.description }}</p>
+                    </div>
+
+                    <!--Product Producer -->
+                    <!-- {% if product.producer %}
                     <p class="small mt-1 mb-0">About the Producer</p>
                     <p class="small mt-1 mb-0">{{ product.producer.name }}</p>
                     <p class="small mt-1 mb-0">{{ product.producer.location }}</p>
                     <p class="small mt-1 mb-0">{{ product.producer.details }}</p>
-                    <!-- {% if product.producer %}
-                    <p class="mt-3">{{ producers.name }}</p>
-                    <p class="mt-3">{{ producer.location }}</p>
-                    <p class="small mt-1 mb-0">{{ producers.name }}</p>
-                    <p class="small mt-1 mb-0">{{ producers.location }}</p>
                     {% endif %} -->
+
+                    {% if product.producer %}
+                    <button class="btn-grad" data-toggle="collapse" data-target="#producer">Producer</button>
+                    <div id="producer" class="collapse">
+                        <p class="small mt-1 mb-0"><i class="fa-solid fa-globe"></i> {{ product.producer.location }}</p>
+                        <p class="small mt-1 mb-0">{{ product.producer.name }}</p>
+                        <p class="small mt-1 mb-0">{{ product.producer.details }}</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- Product add to bag functionality -->
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -111,25 +130,25 @@
     <!-- Reviews Section-->
     <div>
         <div class="container">
-            <div class="box-shadow mt-5 mb-5 p-3 p-lg-5">
+            <div class="glass-box mt-5 mb-5 p-lg-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-10 text-start">
                         {% if reviews %}
-                            <h5 class="mt-2 fw-bold">Reviews for {{ product.name }}</h5>
+                            <h5 class="mt-2 text-center">Reviews for {{ product.name }}</h5>
                         {% else %}
-                            <p class="mt-2">
+                            <p class="mt-2 text-center">
                                 There are currently no reviews for {{ product.name }}.
                             </p>
                         {% endif %}
                     </div>
                     <div>
                         {% if user.is_authenticated %}
-                        <p class="text-center"><a class="btn btn-lg btn-warning border border-dark px-5 ml-3 mt-3" href="{% url 'add_review' product.id %}" aria-label="leave a review">Leave your own review</a></p>
+                        <p class="text-center"><a class="btn btn-lg btn-yellow border border-dark px-5 ml-3 mt-3" href="{% url 'add_review' product.id %}" aria-label="leave a review">Leave your own review</a></p>
                         {% else %}
                         <p class="text-center font-weight-bold">Sign in to review this product</p>
                         <div class="text-center">
-                            <a class="btn btn-lg btn-outline-dark mt-3" href="{% url 'account_signup' %}">Create an account</a> or 
-                            <a class="btn btn-lg btn-warning border border-dark px-5 ml-3 mt-3" href="{% url 'account_login' %}">login</a> 
+                            <a class="btn btn-lg btn-outline-dark" href="{% url 'account_signup' %}">Register</a> 
+                            <a class="btn btn-lg btn-yellow border-dark px-5" href="{% url 'account_login' %}">login</a> 
                         </div>
                         {% endif %}
                     </div>
@@ -140,7 +159,7 @@
                         {% for review in reviews %}
                             <div class="mt-3 mb-2">
                                 <!-- Rating -->
-                                <p class="mb-1 star-rating">
+                                <p class="mb-1 star-rating gold-str">
                                     {% if review.rating == 1 %}
                                         <span>
                                             <i class="fas fa-star"></i>
