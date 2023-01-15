@@ -180,10 +180,18 @@ input[name='q']::placeholder {
 
 /* -------------------------------------------------------------------------- mailchimp */
 
+#mc_embed_signup {
+    background:#fff; 
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif;  
+    width:600px;
+}
+
 .mailchimp {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #FEFAE0;
 }
 
 
