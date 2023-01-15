@@ -25,6 +25,86 @@
         </div>
     </div>
 
+    <div class="container mt-5 mb-5">
+        {% for testimonial in testimonials %}
+            <div class="row g-2">
+                <div class="col-md-4">
+                    <div class="card p-3 text-center px-4">
+                        <div class="user-image">
+                            {% if testimonial.image %}
+                            <a href="{{ testimonial.image }}" target="_blank">
+                                <img class="card-img" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" class="rounded-circle" width="80">
+                            </a>
+                            {% else %}
+                            <a href="">
+                                <img class="card-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}" class="rounded-circle" width="80">
+                            </a>
+                            {% endif %}
+                            <!-- <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80"> -->
+                        </div>
+                        
+                        <div class="user-content">
+                            <h5 class="mb-0">{{ testimonial.name }}</h5>
+                            <p>{{ testimonial.name }}</p>
+                        </div>
+                        
+                        <div class="ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+    
+
+    <!-- Carousel wrapper -->
+    <!-- <div class="container mt-5 mb-5">
+        <div class="row g-2"> -->
+            <!-- {% for review in reviews %}
+                <div class="col-md-4">
+                    <div class="card p-3 text-center px-4">
+                        <div class="user-image"> -->
+                            <!-- Display an image if they have one... -->
+                            <!-- {% if producer.image %} -->
+                            <!-- <img class="rounded-circle" src="{{ testimonial.image }}" alt="{{ producer.name }}" width="80"> -->
+                            <!-- Else show the fallback image -->
+                            <!-- {% else %}
+                                <img class="rounded-circle" src="{{ MEDIA_URL }}default.webp" alt="{{ testimonial.name }}" width="80">
+                            {% endif %}
+                        </div>
+                        
+                        <div class="user-content">
+                            <h5 class="mb-0">{{ testimonial.name}}</h5>
+                            <p>{{ testimonial.detail }}</p>
+                        </div>
+                        
+                        <div class="ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div> -->
+    
+   
+    <!-- Carousel wrapper -->
+
 
     
     <!-- <header class="hero">
