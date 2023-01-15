@@ -178,6 +178,16 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+/* -------------------------------------------------------------------------- mailchimp */
+
+.mailchimp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 /* -------------------------------------------------------------------------- Footer */
 
 /* footer {
