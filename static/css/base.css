@@ -180,12 +180,11 @@ input[name='q']::placeholder {
 
 /* -------------------------------------------------------------------------- Testimonials */
 
-body{
+/* body{
     background-color:#eee;
-}
+} */
 
 .card{
-    
     border:none;
 }
 
@@ -195,9 +194,10 @@ body{
 }
 
 
-.ratings i{
+/* .ratings i{
     color:blue;
-}
+} */
+
 
 /* -------------------------------------------------------------------------- mailchimp */
 
@@ -345,7 +345,12 @@ justify-content: center;
     height: 2px;
 }
 
-/* Allauth form formatting */
+/* -------------------------------------------------------------------------- Allauth form formatting */
+
+.align-alla-center {
+    align-items: center;
+    justify-content: center;
+}
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
