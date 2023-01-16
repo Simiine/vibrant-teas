@@ -1,13 +1,13 @@
-from django.shortcuts import render
-from .models import Testimonial
+# from django.shortcuts import render
+# from .models import Testimonial
 
-def all_testimonials(request):
-    """ A view to show all testimonials """
+# def all_testimonials(request):
+#     """ A view to show all testimonials """
 
-    testimonials = Testimonial.objects.all()
+#     testimonials = Testimonial.objects.all()
 
-    context = {
-        'testimonials': testimonials,
-    }
+#     context = {
+#         'testimonials': testimonials,
+#     }
 
-    return render(request, 'testimonials/testimonials.html', context)
+#     return render(request, 'testimonials/testimonials.html', context)
