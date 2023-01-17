@@ -8,6 +8,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+
+.logo {
+    background: url('/static/logo.png') no-repeat center center;
+    background-size: contain;
+    height: 80px;
+    width: 100px;
+}
+
 /* -------------------------------------------------------------------------- Home Page */
 
 #hero {
