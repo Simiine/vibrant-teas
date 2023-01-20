@@ -47,23 +47,6 @@
                             </ul>
                         </fieldset>
 
-                        <!-- <p>Give a rating to this product:</p>
-                        <fieldset>
-                            <span class="white-star">
-                                <label><i class="fa-sharp fa-solid fa-star"></i><input type="radio" name="rating" id="rating_1" value="1"></label>
-                                <label><i class="fa-sharp fa-solid fa-star"></i><input type="radio" name="rating" id="rating_2" value="2"></label>
-                                <label><i class="fa-sharp fa-solid fa-star"></i><input type="radio" name="rating" id="rating_3" value="3"></label>
-                                <label><i class="fa-sharp fa-solid fa-star"></i><input type="radio" name="rating" id="rating_4" value="4"></label>
-                                <label><i class="fa-sharp fa-solid fa-star"></i><input type="radio" name="rating" id="rating_5" value="5"></label>
-                            </span>
-                        </fieldset> -->
-
-                        
-
-                        
-
-
-
                         <!-- <fieldset>
                             <label for="star-rating">Give a rating to this product:</label>
                             <span name="star-rating" class="star-rating">
@@ -96,9 +79,20 @@
         $('li').on('click',function(){
             $('li').removeClass('active');
             $('li').removeClass('secondary-active');
+            $('li input').removeAttr('checked');
             $(this).addClass('active');
             $(this).prevAll().addClass('secondary-active');
+            $(this).children('input').attr('checked', 'checked')
         })
+
+
+
+        // $('li').on('click',function(){
+        //     $('li').removeClass('active');
+        //     $('li').removeClass('secondary-active');
+        //     $(this).addClass('active');
+        //     $(this).prevAll().addClass('secondary-active');
+        // })
     </script>
 
 {% endblock %}

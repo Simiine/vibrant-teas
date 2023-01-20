@@ -37,6 +37,7 @@
                     <div class="mt-3 mt-md-4">
                         <p>Give a rating to this product:</p>
                         <fieldset class="star-rating">
+                            <input type="hidden" id="rating_value" value="{{ review.rating }}">
                             <ul id="edit-rating" data-editstars="{{ review.rating }}">
                                 <li class="d-inline"><label><i class="fa-sharp fa-solid fa-star"></i></label><input type="radio" name="ratings" id="rating_1" value="1"></li>
                                 <li class="d-inline"><label><i class="fa-sharp fa-solid fa-star"></i></label><input type="radio" name="ratings" id="rating_2" value="2"></li>
@@ -82,9 +83,23 @@
         $('li').on('click',function(){
             $('li').removeClass('active');
             $('li').removeClass('secondary-active');
+            $('li input').removeAttr('checked');
             $(this).addClass('active');
             $(this).prevAll().addClass('secondary-active');
+            $(this).children('input').attr('checked', 'checked')
         })
+    </script>
+
+    <script>
+        let rating = $('#rating_value').val();
+        $("input[name='ratings']").each(function(){
+            if ($(this).val() == rating) {
+                // add your star styling classes
+                $(this).parent().addClass('active');
+                $(this).parent().prevAll().addClass('secondary-active');
+                $(this).attr('checked', 'checked');
+            }
+        });
     </script>
 
 {% endblock %}

@@ -19,6 +19,7 @@ def add_review(request, product_id):
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             review = form.save(commit=False)
+            review.rating = int(request.POST.get('ratings'))
             review.user = user
             review.product = product
             review.save()
@@ -53,6 +54,7 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             review = form.save(commit=False)
+            review.rating = int(request.POST.get('ratings'))
             review.user = user
             review.product = product
             review.save()
