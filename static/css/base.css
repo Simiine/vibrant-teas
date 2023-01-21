@@ -1,13 +1,16 @@
-html {
+/* html {
     height: 100%;
-}
+} */
 
-/* -------------------------------------------------------------------------- Font */
+/* * {
+    margin: 0;
+    padding: 0;
+    border: none;
+} */
 
 body {
     font-family: 'Roboto', sans-serif;
 }
-
 
 .logo {
     background: url('/static/logo.png') no-repeat center center;
@@ -16,7 +19,9 @@ body {
     width: 100px;
 }
 
-/* -------------------------------------------------------------------------- Home Page */
+.main-logo-link {
+    width: fit-content;
+}
 
 #hero {
 	background: url('/media/homepage_hero.jpg') no-repeat center center;
@@ -30,24 +35,9 @@ body {
     margin: 2rem;
 }
 
-/* home page welcome section */
-
-
-
-
-
-
-/* body {
-    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    font-family: 'Roboto';
-} */
-
-
-/* from Bulma */
-
-/* -------------------------------------------------------------------------- Icons */
+.del-strip {
+    background: #650B0F;
+}
 
 .icon {
     align-items: center;
@@ -61,11 +51,46 @@ body {
     text-transform: uppercase;
 }
 
-.main-logo-link {
-    width: fit-content;
+.text-black {
+    color: #000 !important;
 }
 
-/* -------------------------------------------------------------------------- Buttons */
+.border-black {
+    border: 1px solid black !important;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Buttons */
 
 .btn-black {
     background: black;
@@ -85,38 +110,6 @@ body {
     color: white !important;
 }
 
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-/* .bg-black {
-    background: #000 !important;
-} */
-
-.del-strip {
-    background: #650B0F;
-}
-
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-}
-
-a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
-}
-
 .btt-button {
     height: 42px;
     width: 42px;
@@ -129,22 +122,6 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
-}
-
-input[name='q']::placeholder {
-    color: #aab7c4;
-}
-
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -161,7 +138,7 @@ input[name='q']::placeholder {
 }
 
 .arrow-danger {
-    border-bottom-color: #dc3545 !important;
+    border-bottom-color: #B8141D !important;
 }
 
 .arrow-warning {
@@ -169,7 +146,7 @@ input[name='q']::placeholder {
 }
 
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
+    border-bottom-color: #82944C !important;
 }
 
 .arrow-light {
@@ -186,26 +163,24 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* -------------------------------------------------------------------------- Testimonials */
+/* -------------------------------------------------------------------------- Footer */
 
-
-
-.card{
-    border:none;
+.bright-bg {
+    background-color: #588157;
+    color: white;
 }
 
-.user-content p{
-    margin-top:5px;
-    font-size:12px;
+.disclaimer {
+    text-align: center;
 }
 
+.align-middle {
+    text-align: center;
+}
 
-/* .ratings i{
-    color:blue;
-} */
-
-
-/* -------------------------------------------------------------------------- mailchimp */
+.social-networks i {
+    color: white;
+}
 
 #mc_embed_signup {
     /* background:#fff;  */
@@ -221,35 +196,15 @@ input[name='q']::placeholder {
     background: #FEFAE0;
 }
 
+/* -------------------------------------------------------------------------- Testimonials */
 
-
-/* -------------------------------------------------------------------------- Footer */
-
-/* footer {
-    height: 5rem;
-} */
-
-.bright-bg {
-    background-color: #588157;
-    color: white;
-    /* font-size: 1rem; */
+.card{
+    border:none;
 }
 
-.disclaimer {
-    text-align: center;
-}
-
-.align-middle {
-    text-align: center;
-}
-
-/* .social-networks {
-    color: #fff;
-} */
-
-.social-networks i {
-    color: white;
-    /* font-size: 1rem; */
+.user-content p{
+    margin-top:5px;
+    font-size:12px;
 }
 
 /* -------------------------------------------------------------------------- All products page */
@@ -270,18 +225,35 @@ input[name='q']::placeholder {
     color: #650B0F;
 }
 
-/* -------------------------------------------------------------------------- Reviews section */
+/* -------------------------------------------------------------------------- Product Form */
 
-/* Add Review */
-
-/* .white-star {
-    color: white;
-    text-shadow: 2px 2px 7px grey;
+.btn-file {
+    position: relative;
+    overflow: hidden;
 }
 
-.white-star:hover {
-    color: #C27939;
-} */
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #B8141D;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #B8141D;
+    border-color: #B8141D;
+    border-radius: 0;
+}
+
+/* -------------------------------------------------------------------------- Reviews section */
 
 .star-rating ul {
     padding: 0;
@@ -304,14 +276,17 @@ input[name='q']::placeholder {
     display: none;
 }
 
+.btn-grn {
+    color: #fff;
+    background-color: #82944C;
+    border-color: #82944C;
+}
 
-    
-
-
-
-
-
-
+.btn-rd {
+    color: #fff;
+    background-color: #B8141D;
+    border-color: #B8141D;
+}
          
 .btn-grad {
     background-image: linear-gradient(to right, #CCCCB2 0%, #757519  51%, #CCCCB2  100%);
@@ -328,24 +303,18 @@ input[name='q']::placeholder {
 }
 
 .btn-grad:hover {
-background-position: right center; /* change the direction of the change here */
-color: #fff;
-text-decoration: none;
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
 
 .glass-box {
-/* border-radius: 28px;
-background: #e0e0e0;
-box-shadow:  38px 38px 100px #acacac,
-            -38px -38px 100px #ffffff; */
-
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.24);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.8px);
--webkit-backdrop-filter: blur(5.8px);
-border: 1px solid rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(255, 255, 255, 0.32);
 }
 
 .btn-yellow {
@@ -359,6 +328,12 @@ color: #C27939;
 .flex-align {
 align-items: center;
 justify-content: center;
+}
+
+/* -------------------------------------------------------------------------- Producers */
+
+.highlight-txt {
+    color: #606C38;
 }
 
 /* -------------------------------------------------------------------------- Contact Form */
@@ -379,7 +354,7 @@ justify-content: center;
 
 .message-container {
     position: fixed;
-    top: 72px;
+    top: 90px;
     right: 15px;
     z-index: 99999999999;
 }
@@ -443,35 +418,7 @@ justify-content: center;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
-}
-
-/* -------------------------------------------------------------------------- Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
+	color: #82944C; /* text-info */
 }
 
 /* -------------------------------------------------------------------------- Media Queries */
@@ -501,7 +448,7 @@ justify-content: center;
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        /* padding-top: 116px; */
+        padding-top: 116px;
     }
 
     body {
