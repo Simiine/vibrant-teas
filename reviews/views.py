@@ -85,9 +85,9 @@ def delete_review(request, review_id):
     """
     Delete a review for a product
     """
-        
+
     review = get_object_or_404(Review, pk=review_id)
-    user = get_object_or_404(UserProfile, user=request.user)
+    # user = get_object_or_404(UserProfile, user=request.user)
 
     if not request.user != review.user:
         messages.error(request, 'You can only delete your own review')

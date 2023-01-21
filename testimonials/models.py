@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Testimonial(models.Model):
     """
     Class for the testimonials model
