@@ -9,12 +9,3 @@ class ProducerAdmin(admin.ModelAdmin):
     ordering = ('location',)
 
 admin.site.register(Producer, ProducerAdmin)
-
-# class ProducerAdmin(admin.ModelAdmin):
-#     """
-#     Admin settings to display list of Producers
-#     """
-
-#     model = Producer
-#     list_display = ("name", "location")
-#     ordering = ("location",)

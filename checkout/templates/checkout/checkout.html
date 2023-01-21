@@ -23,6 +23,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- Order summary -->
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
                 <div class="row">
@@ -67,6 +68,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Checkout form -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -106,7 +108,6 @@
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
-
                     <div class="submit-button text-right mt-5 mb-2">                    
 						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
 							<span class="icon">
@@ -131,6 +132,7 @@
             </div>
         </div>
     </div>
+    <!-- Load spinner for order for submission -->
     <div id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">
             <span class="icon">

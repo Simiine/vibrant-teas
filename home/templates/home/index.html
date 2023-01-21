@@ -32,13 +32,13 @@
                     <div class="card p-3 text-center px-4 m-2">
                         <div class="user-image">
                             {% if testimonial.image %}
-                            <a href="{{ testimonial.image }}" target="_blank">
-                                <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" class="rounded-circle" width="">
-                            </a>
+                                <a href="{{ testimonial.image }}" target="_blank">
+                                    <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" class="rounded-circle" width="">
+                                </a>
                             {% else %}
-                            <a href="">
-                                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}" class="rounded-circle" width="">
-                            </a>
+                                <a href="">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}" class="rounded-circle" width="">
+                                </a>
                             {% endif %}
                         </div>
                         <div class="user-content">

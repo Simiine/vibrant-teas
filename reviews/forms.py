@@ -13,14 +13,3 @@ class ReviewForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-
-# class ReviewForm(forms.ModelForm):
-#     """
-#     Model to Add / Edit Review
-#     """
-#     class Meta:
-#         model = Product
-#         fields = ('rating', 'review_text')
-
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)

@@ -10,8 +10,6 @@ from producers.models import Producer
 from .forms import ProductForm
 
 
-# Create your views here.
-
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -78,7 +76,6 @@ def product_detail(request, product_id):
     reviews = Review.objects.filter(product=product_id)
     producer = get_object_or_404(Product, pk=product_id)
 
-    # producers = Producer.objects.filter(product=product_id)
     print(product.producer)
     context = {
         'product': product,
