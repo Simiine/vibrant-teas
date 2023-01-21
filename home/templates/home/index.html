@@ -33,11 +33,11 @@
                         <div class="user-image">
                             {% if testimonial.image %}
                                 <a href="{{ testimonial.image }}" target="_blank">
-                                    <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" class="rounded-circle" width="">
+                                    <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
                                 </a>
                             {% else %}
                                 <a href="">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}" class="rounded-circle" width="">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}">
                                 </a>
                             {% endif %}
                         </div>

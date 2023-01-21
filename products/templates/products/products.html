@@ -67,11 +67,11 @@
                                             <a role="button" class="text-danger" data-toggle="modal" data-target="#product_{{ product.id }}" href="">Delete</a>
                                         </small>
                                         <!-- Delete Modal -->
-                                        <div class="modal fade" id="product_{{ product.id }}"  tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="product_{{ product.id }}"  tabindex="-1" role="dialog" aria-labelledby="delete-modal_{{ product.id }}" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteModalLabel">Delete Product</h5>
+                                                        <h5 class="modal-title">Delete Product</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -81,7 +81,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                        <a role="button" class="btn btn-primary" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                        <a role="button" class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,13 +125,13 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
     
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);
