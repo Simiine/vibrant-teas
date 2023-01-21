@@ -276,17 +276,17 @@ input[name='q']::placeholder {
     display: none;
 }
 
-.btn-grn {
+/* .btn-grn {
     color: #fff;
     background-color: #82944C;
     border-color: #82944C;
-}
+} */
 
-.btn-rd {
+/* .btn-rd {
     color: #fff;
     background-color: #B8141D;
     border-color: #B8141D;
-}
+} */
          
 .btn-grad {
     background-image: linear-gradient(to right, #CCCCB2 0%, #757519  51%, #CCCCB2  100%);
@@ -418,7 +418,7 @@ justify-content: center;
 }
 
 .allauth-form-inner-content a {
-	color: #82944C; /* text-info */
+	color: #D48A35; /* text-info */
 }
 
 /* -------------------------------------------------------------------------- Media Queries */
