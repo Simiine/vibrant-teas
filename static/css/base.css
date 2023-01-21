@@ -360,6 +360,13 @@ justify-content: center;
     width: fit-content;
 }
 
+/* -------------------------------------------------------------------------- Checkout */
+
+.aspect {
+    aspect-ratio: 1;
+}
+
+
 /* -------------------------------------------------------------------------- bootstrap toasts */
 
 .message-container {
