@@ -201,7 +201,7 @@ input[name='q']::placeholder {
     width: 100%;
     /* height: 20rem; */
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
@@ -333,7 +333,7 @@ justify-content: center;
 /* Checkout */
 
 .aspect {
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
