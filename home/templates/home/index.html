@@ -2,98 +2,154 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <!-- Hero image -->
-    <div id="hero"></div>
-     <!--- Welcome section -->
-    <div class="pad">
-        <div class="row align-items-center py-7">
-            <div class="col-12 col-md-6">
-                <h2 class="display-5">Welcome to Vibrant Teas</h2>
-                <p class="my-4">Vibrant Teas is a family business, established in 2020, located in Ireland. We are passionate about tea. We supply high quality, loose leaf tea that is organically sourced. We have a range of different loose teas such as Green tea, Herbal tea and Black tea sourced from different countries such as India and China. All our teas come from single farms and has a description of it’s producer so you know where your tea is coming from. </p>
-            </div>
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <img class="img-fluid" src="{{ MEDIA_URL }}tea-stall.jpg" alt="The Chocolate Factory team" width="700" height="450">
-            </div>
+<!-- Hero image -->
+<div id="hero"></div>
+<!--- Welcome section -->
+<div class="pad">
+    <div class="row align-items-center py-7">
+        <div class="col-12 col-md-6">
+            <h2 class="display-5">Welcome to Vibrant Teas</h2>
+            <p class="">
+                Vibrant Teas is a family run tea business, established in 2020, located in Ireland. We are dedicated to
+                providing our customers with the highest quality, freshest and most flavourful teas.
+            </p>
+            <p class="">
+                We offer a wide variety of teas. We have green teas, black teas, herbal teas, and more. We also offer a
+                selection of tea accessories such as tea ware and reusable tea strainers.
+            </p>
+            <p class="">
+                We are passionate about sustainability and organic and natural products. We partner with small
+                family-run tea leaf farms in India and China to ensure that our teas are of the highest quality and are
+                grown in a sustainable manner. We are committed to providing our customers with teas that are free of
+                pesticides, herbicides, and other chemicals. We also strive to use packaging that is recyclable and
+                biodegradable.
+            </p>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <img class="img-fluid" src="{{ MEDIA_URL }}tea-stall.jpg" alt="The Chocolate Factory team" width="700"
+                height="450">
         </div>
     </div>
-    <!--- Testimonials section -->
-    <div class="container mt-5 mb-5">
-        <div class="row g-2">
-            {% for testimonial in testimonials %}
-                <div class="col-md-4">
-                    <div class="card p-3 text-center px-4 m-2">
-                        <div class="user-image">
-                            {% if testimonial.image %}
-                                <a href="{{ testimonial.image }}" target="_blank">
-                                    <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
-                                </a>
-                            {% else %}
-                                <a href="">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}">
-                                </a>
-                            {% endif %}
-                        </div>
-                        <div class="user-content">
-                            <br>
-                            <h5 class="mb-0">{{ testimonial.name }}</h5>
-                            <p>{{ testimonial.details }}</p>
-                        </div>
-                        <div class="">
-                            <p class="mb-1 star-rating gold-str">
-                                {% if testimonial.rating == 1 %}
-                                    <span>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                {% elif testimonial.rating == 2 %}
-                                    <span>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                {% elif testimonial.rating == 3 %}
-                                    <span>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                {% elif testimonial.rating == 4 %}
-                                    <span>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                {% else %}
-                                    <span>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </span>
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
+</div>
+<!-- Links to page -->
+<div class="container mt-5 mb-5">
+    <div class="row g-2">
+        <div class="col-md-4">
+            <div class="card p-3 text-center px-4 m-2">
+                <div>
+                    <img src="/static/all-tea-products.jpg" alt="All products image">
                 </div>
-            {% endfor %}
+                <div>
+                    <a class="card-title btn btn-yellow" href="{% url 'products' %}">
+                        <strong>All Products</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 text-center px-4 m-2">
+                <div>
+                    <img src="/static/herbal-teas.jpg" alt="Herbal teas image">
+                </div>
+                <div>
+                    <a class="card-title btn btn-yellow" href="{% url 'products' %}">
+                        <strong>Herbal Tea</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 text-center px-4 m-2">
+                <div>
+                    <img src="/static/tea-strainers.jpg" alt="Tea Strainers image">
+                </div>
+                <div>
+                    <a class="card-title btn btn-yellow" href="{% url 'products' %}">
+                        <strong>Tea Strainers</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<!--- Testimonials section -->
+<div class="container mt-5 mb-5">
+    <div class="row g-2">
+        {% for testimonial in testimonials %}
+        <div class="col-md-4">
+            <div class="card p-3 text-center px-4 m-2">
+                <div class="user-image">
+                    {% if testimonial.image %}
+                    <a href="{{ testimonial.image }}" target="_blank">
+                        <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
+                    </a>
+                    {% else %}
+                    <a href="">
+                        <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="user-content">
+                    <br>
+                    <h5 class="mb-0">{{ testimonial.name }}</h5>
+                    <p>{{ testimonial.details }}</p>
+                </div>
+                <div class="">
+                    <p class="mb-1 star-rating gold-str">
+                        {% if testimonial.rating == 1 %}
+                        <span>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        {% elif testimonial.rating == 2 %}
+                        <span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        {% elif testimonial.rating == 3 %}
+                        <span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        {% elif testimonial.rating == 4 %}
+                        <span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        {% else %}
+                        <span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
