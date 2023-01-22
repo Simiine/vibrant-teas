@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Producer(models.Model):
     """
     Class for the producer model

@@ -7,5 +7,5 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = ('product', 'rating', 'review_text', 'date', 'user')
     list_filter = ('product', 'rating', 'date')
 
-admin.site.register(Review, ReviewAdmin)
 
+admin.site.register(Review, ReviewAdmin)

@@ -28,10 +28,12 @@ def add_review(request, product_id):
             messages.success(request, 'Successfully added review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add review. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add review.'
+                           'Please ensure the form is valid.')
     else:
         form = ReviewForm()
-        
+
     template = 'reviews/add_review.html'
     context = {
         'product': product,
@@ -40,6 +42,7 @@ def add_review(request, product_id):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_review(request, review_id):
@@ -65,7 +68,9 @@ def edit_review(request, review_id):
             messages.success(request, 'Successfully updated review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update review. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to update review.'
+                           'Please ensure the form is valid.')
     else:
         form = ReviewForm(instance=review)
         messages.info(request, f'You are editing {review.product.name}')
@@ -79,6 +84,7 @@ def edit_review(request, review_id):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def delete_review(request, review_id):

@@ -14,8 +14,8 @@ where it would've been quite difficult to get rid of the duplicate IDs, etc I ju
 ## CSS
 - Testing was carried out using Jigsaw - https://jigsaw.w3.org/css-validator/
 - No errors were found when passing through the official (Jigsaw) validator.
-
 ![CSS](static/images/css.png)
+
 ## PEP8
 - I used the PEP8 validator on my Gitpod Workspace. All pages were cleared. 
 

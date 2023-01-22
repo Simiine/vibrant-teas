@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Producer
 
+
 def all_producers(request):
     """ A view to show all producers """
 

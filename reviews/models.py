@@ -11,10 +11,12 @@ class Review(models.Model):
     RATINGS = [(1, 1), (2, 2), (3, 3), (4, 4), (5, 5),]
 
     rating = models.IntegerField(choices=RATINGS)
-    user = models.ForeignKey(UserProfile, null=False, blank=False, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, null=False,
+                             blank=False, on_delete=models.CASCADE)
     review_text = models.TextField(max_length=500, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=False,
+                                blank=False, on_delete=models.CASCADE)
 
     class Meta:
         """

@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Product, Category, Subcategory
 from producers.models import Producer
 
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
@@ -23,11 +24,13 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
+
 class SubcategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
