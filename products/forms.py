@@ -18,10 +18,12 @@ class ProductForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         categories = Category.objects.all()
-        friendly_names_cat = [(c.id, c.get_friendly_name()) for c in categories]
+        friendly_names_cat = [
+            (c.id, c.get_friendly_name()) for c in categories]
 
         subcategories = Subcategory.objects.all()
-        friendly_names_sub = [(s.id, s.get_friendly_name()) for s in subcategories]
+        friendly_names_sub = [
+            (s.id, s.get_friendly_name()) for s in subcategories]
 
         self.fields['category'].choices = friendly_names_cat
         self.fields['subcategory'].choices = friendly_names_sub
