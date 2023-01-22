@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/ 
+Sitemap: https://vibrant-teas.herokuapp.com/sitemap.xml
