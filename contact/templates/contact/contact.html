@@ -2,32 +2,32 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container pad-bot">
-        <div class="row">
-            <div class="col text-center">
-                <h2 class="logo-font my-5">Contact Form</h2>
-            </div>
-        </div>
-        <!-- Contact Form -->
-        <div class="row">
-            <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
-                <form action="{% url 'contact' %}" method="POST">
-                    {% csrf_token %}
-                    {{ form | crispy }} 
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-black rounded-0">Submit</button>
-                    </div>               
-                </form>
-            </div>
+<div class="overlay"></div>
+<div class="container pad-bot">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="logo-font my-5">Contact Form</h2>
         </div>
     </div>
+    <!-- Contact Form -->
+    <div class="row">
+        <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
+            <form action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-black rounded-0">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
