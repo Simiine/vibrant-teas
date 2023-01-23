@@ -164,9 +164,10 @@ The navigation bar sits at the top of all the pages. It has a free delivery thre
 ![Header Navigation](readme-docs/features/header-navigation.png)
 
 ### Home Page
-The home page was kept very simple. It has a welcome page which gives a brief introduction to the company, what types of products are offered and a link to view all products. Below the intro are links to 3 of the product pages. There is also a testimonial section below that offers the user the ability to see feedback from people who have shopped on the site and learn about their experiences. 
+The home page was kept very simple. It has a header image that shows glass jars with different teas in each of them on a table. The Colours of the teas in the image inspires the overall colour and theme of the site. The home page has a welcome page which gives a brief introduction to the company, what types of products are offered and a link to view all products. Below the intro are links to 3 of the product pages. There is also a testimonial section below that offers the user the ability to see feedback from people who have shopped on the site and learn about their experiences. 
 
-![Home Page]()
+![Home Page 1](readme-docs/features/homepage-1.png)
+![Home Page 2](readme-docs/features/homepage-2.png)
 
 ### Footer
 The footer is split into two key areas. The first area of the footer is the Newsletter signup where a user can enter their email address to receive news and updates on the website and products. Below is the second part of the footer which contains social media links, contact information and useful links to the products pages, the producers' page, the contact form and the site privacy policy.
@@ -236,7 +237,7 @@ The user can register for an account by inputting their email address twice, inp
 ## Marketing
 In order the make sure that the site is accessible through search engines a sitemap and robots.txt file were created to allow search engines to crawl through the site and fetch relevant content to assist with SEO. Relevant keywords were used in the meta tags of the HTML. Newsletter signup was created using Mailchimp and placed at the footer of the page to allow users to stay up to date with the updates on the site. A Facebook business page was created to help promote the site to target consumers which had the site branding. Having a Facebook page offers great advertising potential with its use of Facebook ads and content creation for the brand. 
 
-![Facebook Page]()
+![Facebook Page](readme-docs/facebook-business-page.png)
 
 ## Testing
 A full breakdown of site testing can be found in a separate document called [TESTING.md](TESTING.md) 
