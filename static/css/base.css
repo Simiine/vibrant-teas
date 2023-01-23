@@ -315,6 +315,10 @@ justify-content: center;
     color: #606C38;
 }
 
+.cover-fit {
+    object-fit: cover;
+}
+
 /* Contact Form */
 
 .pad-bot {

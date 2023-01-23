@@ -24,9 +24,9 @@
         <div
             class="col-12 col-md-6 {% if forloop.counter|divisibleby:2 %}order-lg-first{% else %}order-lg-second{% endif %} d-flex justify-content-center">
             {% if producer.image %}
-            <img class="img-fluid" src="{{ producer.image.url }}" alt="{{ producer.name }}">
+            <img class="img-fluid .cover-fit" src="{{ producer.image.url }}" alt="{{ producer.name }}">
             {% else %}
-            <img class="img-fluid" src="{{ MEDIA_URL }}default.webp" alt="{{ producer.name }}">
+            <img class="img-fluid .cover-fit" src="{{ MEDIA_URL }}default.webp" alt="{{ producer.name }}">
             {% endif %}
         </div>
         <div
