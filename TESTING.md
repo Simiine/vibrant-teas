@@ -1,12 +1,3 @@
-## Contents
-- [**Validation**](#validation)
-  - [**HTML**](#html)
-  - [**CSS**](#css)
-  - [**PEP8**](#pep8)
-- [**Manual Testing**](#manual-testing)
-
-
-
 # Validation
 ## HTML
 - Testing was carried out using Jigsaw - https://validator.w3.org/ 
@@ -84,10 +75,6 @@ To ensure cross-compatibility, I tested the website across numerous devices and 
 |  | Payment card validation | Enter payment details | Incomplete payment details are flagged as incomplete | 
 |  | Process order | Fill in all information and click complete order | Order processed and redirected to order confirmation page | 
 
-# Performance
-## Desktop
-## Mobile
-
 # Bugs
 ## Solved Bugs
 1. Problem: Programming Error when trying to access Heroku deployed link 
@@ -109,8 +96,3 @@ To ensure cross-compatibility, I tested the website across numerous devices and 
 5. Problem: Reviews not submitting with star input
     - Cause: Radio buttons were not being selected when clicked on as input was nested in li. So when user selected the li, the radio wasn't getting selected. 
     - Solution: Remove the ratings field on the form in forms.py to grab the value in view that the user chooses from the frontend. After, add the rating request in the views then use JS code to add checked property to the selected stars input to trigger it's value for the backend to pick up. 
-
-## Outstanding Bugs
-1. Problem: Confirmation Email not coming through
-    - Cause: Network Error. Gmail servers down
-    - Solution: 
