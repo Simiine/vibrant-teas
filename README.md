@@ -148,7 +148,7 @@ Wireframes were created using Balsamiq wireframes to help visualise how the site
 - [Products Detail Page Wireframe](readme-docs/wireframes/product-details-wireframe.png)
 - [Review Page Wireframe](readme-docs/wireframes/review-wireframe.png)
 - [Producers Page wireframe](readme-docs/wireframes/producers-wireframe.png)
-- [Product management Page Wireframe](readme-docs/wireframes/product-management-wireframe.png)
+- [Product Management Page Wireframe](readme-docs/wireframes/product-management-wireframe.png)
 - [User Profile Page Wireframe](readme-docs/wireframes/profile-wireframe.png)
 - [Shopping Bag Page Wireframe](readme-docs/wireframes/shopping-bag-wireframe.png)
 - [Checkout Page Wireframe](readme-docs/wireframes/checkout-wireframe.png)
@@ -301,19 +301,19 @@ I deployed this project in Heroku using the following steps:
 12. Confirm you want to connect to GitHub by clicking "Connect to GitHub"
     - Insert repository name and click "Search"
     - Click "Connect" to link up Heroku app to the GitHub repository code
-11. Scroll down and choose a deployment method 
+13. Scroll down and choose a deployment method 
     - Click on "Enable Automatic Deploys" 
-   - This allows Heroku to rebuild your app every time you push a new change to your code to GitHub
-12. Generate a Secret Key and add it to config var
-13. Return to settings.py in gitpod and replace the secret key setting with a call to get it from the environment and use an empty string as a default
+    - This allows Heroku to rebuild your app every time you push a new change to your code to GitHub
+14. Generate a Secret Key and add it to config var
+15. Return to settings.py in gitpod and replace the secret key setting with a call to get it from the environment and use an empty string as a default
    ```
    SECRET_KEY = os.environ.get('SECRET_KEY', '')
    ```
-14. Set DEBUG to be true only if there is a development in the environment
+16. Set DEBUG to be true only if there is a development in the environment
    ```
    DEBUG = 'DEVELOPMENT' in os.environ
    ```
-15. Commit changes and push to github
+17. Commit changes and push to github
 
 ### Create AWS Account
 1. Create AWS account
