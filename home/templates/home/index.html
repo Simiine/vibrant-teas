@@ -48,7 +48,8 @@
                     <img class="card-img mb-2" src="{{ MEDIA_URL }}all-tea-products.jpg" alt="All products image">
                 </div>
                 <div>
-                    <a class="card-title btn btn-yellow" href="{% url 'products' %}">
+                    <a class="card-title btn btn-yellow" href="{% url 'products' %}"
+                        aria-label="Go to all products page">
                         <strong>All Products</strong>
                     </a>
                 </div>
@@ -60,7 +61,9 @@
                     <img class="card-img mb-2" src="{{ MEDIA_URL }}herbal-teas.jpg" alt="Herbal teas image">
                 </div>
                 <div>
-                    <a class="card-title btn btn-yellow" href="{% url 'products' %}?category=teas&subcategory=herbal_tea">
+                    <a class="card-title btn btn-yellow"
+                        href="{% url 'products' %}?category=teas&subcategory=herbal_tea"
+                        aria-label="Go to herbal tea page">
                         <strong>Herbal Tea</strong>
                     </a>
                 </div>
@@ -72,7 +75,9 @@
                     <img class="card-img mb-2" src="{{ MEDIA_URL }}tea-strainers.jpg" alt="Tea Strainers image">
                 </div>
                 <div>
-                    <a class="card-title btn btn-yellow" href="{% url 'products' %}?category=accessories&subcategory=tea_strainers">
+                    <a class="card-title btn btn-yellow"
+                        href="{% url 'products' %}?category=accessories&subcategory=tea_strainers"
+                        aria-label="Go to tea strainers page">
                         <strong>Tea Strainers</strong>
                     </a>
                 </div>
@@ -88,13 +93,9 @@
             <div class="card p-3 text-center px-4 m-2">
                 <div class="user-image">
                     {% if testimonial.image %}
-                    <a href="{{ testimonial.image }}" target="_blank">
-                        <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
-                    </a>
+                    <img class="img-fluid" src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
                     {% else %}
-                    <a href="">
-                        <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}">
-                    </a>
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ testimonial.name }}">
                     {% endif %}
                 </div>
                 <div class="user-content">

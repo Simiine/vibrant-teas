@@ -9,44 +9,44 @@
 
         <!-- All products -->
         <li class="nav-item">
-            <a href="{% url 'products' %}" class="nav-link logo-font font-weight-bold text-black mr-5">All Products</a>
+            <a href="{% url 'products' %}" class="nav-link logo-font font-weight-bold text-black mr-5" aria-label="Go to all products page">All Products</a>
         </li>
 
         <!-- Teas -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="tea-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+                aria-haspopup="true" aria-expanded="false" aria-label="Open dropdown for tea types">
                 Teas
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="tea-link">
-                <a href="{% url 'products' %}?category=teas&subcategory=herbal_tea" class="dropdown-item">Herbal Tea</a>
-                <a href="{% url 'products' %}?category=teas&subcategory=green_tea" class="dropdown-item">Green Tea</a>
-                <a href="{% url 'products' %}?category=teas&subcategory=black_tea" class="dropdown-item">Black Tea</a>
+                <a href="{% url 'products' %}?category=teas&subcategory=herbal_tea" aria-label="Go to herbal tea page" class="dropdown-item">Herbal Tea</a>
+                <a href="{% url 'products' %}?category=teas&subcategory=green_tea" aria-label="Go to green tea page" class="dropdown-item">Green Tea</a>
+                <a href="{% url 'products' %}?category=teas&subcategory=black_tea" aria-label="Go to black tea page" class="dropdown-item">Black Tea</a>
             </div>
         </li>
 
         <!-- Accessories -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="accessories-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Open dropdown for types of accessories">
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
-                <a href="{% url 'products' %}?category=accessories&subcategory=tea_strainers" class="dropdown-item">Tea
+                <a href="{% url 'products' %}?category=accessories&subcategory=tea_strainers" aria-label="Go to tea strainers page" class="dropdown-item">Tea
                     Strainers</a>
                 <a href="{% url 'products' %}?category=accessories&subcategory=teaware"
-                    class="dropdown-item">Teaware</a>
+                    class="dropdown-item" aria-label="Go to teaware page">Teaware</a>
             </div>
         </li>
 
         <!-- Producers -->
         <li class="nav-item">
-            <a href="{% url 'producers' %}" class="nav-link logo-font font-weight-bold text-black mr-5">Producers</a>
+            <a href="{% url 'producers' %}" aria-label="Go to producers page" class="nav-link logo-font font-weight-bold text-black mr-5">Producers</a>
         </li>
 
         <!-- Contact Form -->
         <li class="nav-item">
-            <a href="{% url 'contact' %}" class="nav-link logo-font font-weight-bold text-black mr-5">Contact</a>
+            <a href="{% url 'contact' %}" aria-label="Go to contact page" class="nav-link logo-font font-weight-bold text-black mr-5">Contact</a>
         </li>
     </ul>
 </div>
